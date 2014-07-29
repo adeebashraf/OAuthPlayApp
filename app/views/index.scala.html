@@ -1,7 +1,21 @@
-@(message: String)
+@*@(message: String)
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message, style = "Java")
+   @play20.welcome(message, style = "Java")
 
+}*@
+
+@(fbForm: Form[Facebook])
+
+@import helper._
+
+@main("Facebook OAuth") {
+	@form(routes.Application.facebook()) {
+		@inputText(fbForm("label"))
+		<input type="submit" value="HIT">
+	}
+	
 }
+
+
